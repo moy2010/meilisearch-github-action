@@ -1,0 +1,30 @@
+name: 'Meilisearch in GitHub Actions'
+description: 'Start a Meilisearch server (on default port 7700 or a custom port)'
+
+branding:
+  icon: 'search'
+  color: 'pink'
+
+inputs:
+  meilisearch-version:
+    description: 'Meilisearch version to use (default "latest")'
+    required: false
+    default: 'latest'
+
+  meilisearch-port:
+    description: 'Meilisearch port to use (default 7700)'
+    required: false
+    default: 7700
+
+  meilisearch-api-key:
+    description: 'Meilisearch API key username (default: meilisearch)'
+    required: false
+    default: 'meilisearch'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.meilisearch-version }}
+    - ${{ inputs.meilisearch-port }}
+    - ${{ inputs.meilisearch-api-key }}
