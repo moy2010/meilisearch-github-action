@@ -33,7 +33,7 @@ jobs:
     - name: Start Meilisearch
       uses: moy2010/meilisearch-github-action@0.1
       with:
-        meilisearch-version: 25.2
+        meilisearch-version: v0.25.2
 
     - run: npm install
 
@@ -72,7 +72,7 @@ jobs:
     - name: Start Meilisearch
       uses: moy2010/meilisearch-github-action@0.1
       with:
-        meilisearch-version: 25.2
+        meilisearch-version: v0.25.2
         meilisearch-port: 42069
 
     - name: Install dependencies
@@ -111,7 +111,7 @@ jobs:
     - name: Start Meilisearch
       uses: moy2010/meilisearch-github-action@0.1
       with:
-        meilisearch-version: 25.2
+        meilisearch-version: v0.25.2
         meilisearch-port: 42069
         meilisearch-api-key: test-api-key
 
