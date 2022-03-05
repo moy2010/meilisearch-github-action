@@ -11,5 +11,5 @@ echo "  - version [$MEILISEARCH_VERSION]"
 echo "  - api key [$MEILISEARCH_API_KEY]"
 echo ""
 
-docker run --name meilisearch --publish $MEILISEARCH_PORT:$MEILISEARCH_PORT --detach --volume -e MEILI_MASTER_KEY=$MEILISEARCH_API_KEY "$(pwd)/data.ms:/data.ms" getmeili/meilisearch:$MEILISEARCH_VERSION
+docker run --name meilisearch --publish $MEILISEARCH_PORT:$MEILISEARCH_PORT -e MEILI_MASTER_KEY=$MEILISEARCH_API_KEY --detach --volume "$(pwd)/data.ms:/data.ms" getmeili/meilisearch:$MEILISEARCH_VERSION
 echo "::endgroup::"
