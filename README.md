@@ -84,5 +84,45 @@ jobs:
         CI: true
 ```
 
+### Using a Custom Meilisearch API Key
+You can also provide a custom API to the Meilisearch instance.
+
+```yaml
+name: Run tests
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x]
+
+    steps:
+    - name: Git checkout
+      uses: actions/checkout@v2
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Start Meilisearch
+      uses: moy2010/meilisearch-github-action@0.1
+      with:
+        meilisearch-version: 25.2
+        meilisearch-port: 42069
+        meilisearch-api-key: test-api-key
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run tests
+      run: npm test
+      env:
+        CI: true
+```
+
 ## License
 MIT © [Moises Garcia](https://github.com/moy2010)

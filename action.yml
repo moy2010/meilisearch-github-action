@@ -3,7 +3,7 @@ description: 'Start a Meilisearch server (on default port 7700 or a custom port)
 
 branding:
   icon: 'search'
-  color: 'pink'
+  color: 'purple'
 
 inputs:
   meilisearch-version:
@@ -17,7 +17,7 @@ inputs:
     default: 7700
 
   meilisearch-api-key:
-    description: 'Meilisearch API key username (default: meilisearch)'
+    description: 'Meilisearch API key (default: meilisearch)'
     required: false
     default: 'meilisearch'
 
